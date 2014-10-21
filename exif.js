@@ -317,8 +317,8 @@
 
 
     function base64ToArrayBuffer(base64, contentType) {
-        // contentType = contentType || base64.match(/^data\:([^\;]+)\;base64,/mi)[1] || ''; // e.g. 'data:image/jpeg;base64,...' => 'image/jpeg'
-        contentType = contentType || base64.match(/^data\:(.*?)base64,/mi)[1] || '';
+        contentType = contentType || base64.match(/^data\:(.*?)base64,/mi)[1] || ''; // e.g. 'data:image/jpeg;base64,...' => 'image/jpeg'
+        
         base64 = base64.replace(/^data\:([^\;]+)\;base64,/gmi, '');
         var binary = atob(base64);
         var len = binary.length;
